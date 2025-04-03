@@ -128,7 +128,7 @@ const Header = () => {
   };
 
   const filteredCurrencies = Object.keys(exchangeRates).filter((currencyCode) =>   //this one
-    countryNames[currencyCode].toLowerCase().includes(searchQuery.toLowerCase())
+    countryNames[currencyCode]?.toLowerCase().includes(searchQuery?.toLowerCase())
   );
 
   const toggleMobileMenu = () => {
