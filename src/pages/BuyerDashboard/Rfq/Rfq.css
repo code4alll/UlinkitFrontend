@@ -1,0 +1,258 @@
+.heading-2{
+    font-size: 25px;
+}
+.responsive{
+    padding: 30px 30px 30px 30px;
+}
+.create-btn{
+    /* margin-right: 115px; */
+    padding: 15px;
+    background-color:#FC904C ;
+    border: none;
+    border-radius: 2px;
+    width:  100%;
+    font-weight: 600;
+    color: #fff;
+}
+.justify-content-start{
+    /* margin: 20px 80px; */
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.boxes-width{
+    width: 20%;
+}
+.input-width{
+    width: 90%;
+}
+.status-width{
+    width: 20%;
+    margin-top: 20px;
+}
+.filter-margin{
+    margin-top: 20px;
+    background-color: #3770bf;
+    color: #fff;
+    border: none;
+}
+.boxes-width-2{
+    width: 100%;
+}
+.paragraph-3{
+    margin-top: 20px;
+    font-size: 15px;
+  border-bottom: 3px solid #FC904C;  
+}
+.calender{
+  margin-top: 20px;
+  border: 1px solid black;
+}
+.status-width-border{
+   border: 1px solid black;
+    background-color: #fff;
+    width: 20%;
+}
+.item-change{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 20%;
+    padding: 20px 0px 0px 0px;
+}
+.change-btn{
+    font-size: 15px;
+    font-weight: 600px;
+}
+.rfq-message-show{
+    display: flex;
+ flex-direction: column;
+ align-items: center;
+    justify-content: center;
+}
+.rfq-btns{
+   border: none;
+   background-color: #FC904C;
+   color: #fff;
+   font-weight: 600;
+   padding: 10px;
+}
+.rfq-btns:hover{
+    background-color: #3770bf;
+    transition:  0.6 ease-in-out;
+    width:  10%;
+}
+.boxes-width-border{
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius:  2px ;
+}
+.rfq-value{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.rfq-icon{
+     width: 20%;
+}
+.mr-right{
+    margin-right: 100px;
+}
+.title-size{
+    font-size: 25px;
+}
+.table-containers-head{
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(7 ,1fr);
+    border: 1px solid #4397c1;
+    background-color: #3770bf;
+    /* margin-left: 82px;   */
+}
+.table-containers-heads{
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(7 ,1fr);
+    border: 1px solid #adabab;
+    /* margin-left: 82px;   */
+}
+.img-flex{
+    display: flex;
+    width: 100%;
+}
+.img-data{
+    border: 1px solid rgb(56, 55, 55);
+    padding: 10px;
+    width: 110px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+  .filter-flex-data-value{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+.product-name{
+    width: 100%;
+    margin-right: 100px;
+}
+.data-width{
+   margin-left: -20px;
+}
+.image-width{
+    width: 20px;
+    height: 20px;
+}
+.buyer-message{
+    padding: 20px; 
+}
+.flex-space-beetwen{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-title {
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  .heading-2{
+    opacity: 1;
+}
+.order-status{
+    display: flex;
+    justify-content: space-between; 
+}
+.btn-1{
+    width: 100%;
+    border: 1px solid rgb(165, 160, 160);
+    background-color: #FC904C;
+}
+.btn-1:hover{
+    background-color: #4397c1;
+    color: #fff;
+    transition: 0.6s ease-in-out;
+}
+.btn-2{
+    width: 100%;
+    border: 1px solid rgb(165, 160, 160);
+}
+.btn-2:hover{
+    background-color: #4397c1;
+    color: #fff;
+    transition: 0.6s ease-in-out;
+}
+
+.vor{
+    border-bottom: 2px solid rgb(226, 148, 148);
+}
+.img-flex{
+    display: flex;
+    width: 100%;
+  }
+  /*  added the media query for the mobile and tablet device css */
+  @media(min-width: 320px) and (max-width: 600px){
+    .responsive{
+     padding:  10px 5px 10px 5px;
+    }
+    .justify-content-start{
+        display: block;
+        width: 100%;
+    }
+    .input-width{
+        width: 100%;
+    }
+    .boxes-width-border{
+     width: 100%;
+     display: flex;
+    }
+    .search-icon{
+        margin-top: 10px;
+    }
+    .status-width-border{
+        width: 100%;
+    }
+    .filter-flex-data-value{
+        display: flex;
+        align-items: center;
+        gap: 30px
+    }
+    .create-btn{
+        /* margin-right: 115px; */
+        padding: 10px;
+       
+    }
+    .item-change{
+        width: 100%;
+    }
+    .rfq-icon{
+        width: 50%;
+    }
+  
+  }
+
+/* media query for the tablet */
+@media(min-width:  601px) and (max-width: 1024px){
+    .responsive{
+        padding:  10px 5px 10px 5px;
+    }
+    .create-btn{
+        padding: 10px;
+    }
+    .filter-flex-data-value{
+        gap: 10px;
+    }
+    .input-width{
+     width: 100%;
+    }
+    .item-change{
+        width:  50%;
+    }
+}

@@ -1,0 +1,260 @@
+.responsive{
+    padding: 30px 30px 30px 30px;
+}
+.heading-css{
+    font-size: 28px;
+}
+.company-border{
+    border: 1px solid #dddddd;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.company-padding{
+    padding: 30px 20px 0px 20px;
+}
+.company-profile-buyer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.edit-detail-button{
+    background: #FC904C;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #fff;
+    border-radius: 2px; 
+}
+/*  only this class name are not resoponsive the com */
+.name-logo{
+    padding: 30px ;
+     width: 90px;
+    height: 1%;
+    border: 1px solid black;
+    border-radius: 50%;
+   background-color:  rgb(57, 108, 191);  
+   color: #fff;
+}
+.company-profile-detail{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 80px;
+    width: 100%;  
+}
+.company-name{
+    margin-top: 25px;
+}
+.company-names{
+    margin-top: 30px;
+    font-weight: 600;
+}
+.company-profile-name{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+.info-icons{
+    font-size: 30px;
+    font-weight: 600;
+}
+.credit-info-detail{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #958d8d;
+}
+.trade-license{
+    font-size: 70px;
+    margin-top: -70px;
+}
+.file-formate{
+    margin-top: 15px;
+    font-size: 15px;
+    color: #958d8d;
+}
+.trade-license-file{
+    margin-top: 20px;
+}
+.credit-Edit{
+    width: 15%;
+    padding: 10px;
+}
+.file-upload-sections{
+    width: 50%;
+    border: 1px solid black;
+    margin-top: 15px;
+    border-style: dashed;
+    padding: 10px;
+}
+.trade-expiry-date{
+    margin-top: 15px;
+    width: 100%;
+}
+.trade-expiry-dates{
+    margin-top: 15px;
+    width: 26.5%;
+}
+.expiry-title{
+    margin-top: 15px;
+    width: 100%;
+}
+.licence{
+   padding-left: 150px;
+}
+.savecancel{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 30px;
+}
+.sv{
+    background-color:  rgb(57, 108, 191); 
+    color: #fff;  
+}
+.Bussines-Form{
+margin-top: 10px;
+padding-bottom: 10px;   
+}
+.form-width{
+    width: 40%;
+    border: none;
+    border: 1px solid #dddddd;
+    background: #ede7e7;
+    border-radius: 5px;
+    border: 1px solid rgb(57, 108, 191) ;
+}
+.savecancels{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 10px;
+}
+.company-detail-names {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.company-name {
+    font-weight: bold;
+    flex: 1;
+}
+.company-names {
+    flex: 2;
+    color: #555;
+    word-break: break-word;
+}
+.company-padding {
+    padding: 20px;
+}
+.edit-detail-button:hover {
+    background-color: #0056b3;
+}
+.custom-datepicker-width {
+    width: 300px; /* Adjust the width as needed */
+  }
+  .custom-datepicker-widths {
+    width: 510px; 
+    border-radius: 3px;/* Adjust the width as needed */
+    background: #ede7e7;
+    border: 1px solid rgb(57, 108, 191) ;
+  }
+/* file css */
+.file-upload{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 10px;
+    border: 1px solid black;
+    background: rgb(225, 220, 220);
+}
+.dow{
+    font-size: 25px;
+    gap: 10px;
+}
+/* Add Documents here */
+.show-flex-item {
+    display:flex ;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.show-flex-item div{
+    width: 200px;
+}
+.status-css{
+   width: 100px;
+   padding: 1px;
+   text-align: center;
+   border-radius: 5px;
+   background: #FC904C;
+   color: #fff;
+}
+/*  add the media query her for the laptop and mobile and tablet view */
+/*  write here the media query for the mobile  */
+@media (min-width: 320px ) and (max-width: 768px ){
+    .responsive{
+       padding:  10px 5px 0px 5px;
+    }
+    .name-logo{
+        padding: 30px 30px 30px 30px;
+        width: 90px;
+    }
+    .edit-detail-button{
+        font-size: 14px;
+    }
+    .company-detail-names {
+       gap: 20px;
+    }
+    .credit-Edit{
+        width: 25%;
+        padding: 10px 0px 0px 0px;
+    }
+    .show-flex-item {
+       margin: 0px;
+       line-height: 1.5rem;
+    }
+    .form-width{
+        width: 100%;
+    }
+    .custom-datepicker-widths {
+        width: 270px; 
+    }
+    .company-profile-detail{
+        align-items: start;
+    }
+    .trade-license{
+     display: none;
+    }
+    .file-upload-sections{
+        width: 100%;
+    }
+    .trade-expiry-dates{
+        width: 100%;
+    }
+    .licence{
+        padding: 0px;
+     }
+     #file-upload-input{
+        width: 100vh;
+     }
+     .file-formate{
+       width: 100%;
+    }
+   .trade-license-file{
+    gap: 0px;
+    }
+    .file-upload{
+        width: 100%;
+    }
+}
+
