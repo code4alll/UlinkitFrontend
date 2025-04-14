@@ -2,8 +2,8 @@ import React from 'react'
 import warehouseImg from '../assets/Warehouse.jpeg'; 
 import { FaCalendarAlt, FaGlobe, FaUsers } from 'react-icons/fa';
 import { GiTalk } from 'react-icons/gi'; // for "languages spoken"
-import TestimonialCarousel from '../Components/Testimonials';
-import FAQsSection from '../Components/FAQs';
+import TestimonialCarousel from '../components/Testimonials';
+import FAQsSection from '../components/FAQs';
 const Data = [
     {
       id: 1,
