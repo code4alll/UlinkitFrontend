@@ -47,36 +47,77 @@ const ProductListingPolicy = () => {
     }));
   };
 
-  return (
-    <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-3xl font-semibold text-center mb-4">Product Listing Policy</h1>
-      <h2 className="text-xl text-gray-600 text-center mb-6">Effective February 15, 2020</h2>
+  const sectionStyle = {
+    cursor: 'pointer',
+    color: '#FFA500',
+    fontSize: '20px',
+    fontWeight: '600',
+    marginBottom: '10px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    transition: 'all 0.3s ease',
+  };
 
-      <div className="mb-6">
-        <p className="text-base mb-4">
-          This Product Listing Policy applies to the Tradeling.com website and any mobile applications operated by Blink Technologies FZCO and its affiliates <strong>(“Tradeling”)</strong>.
+  const arrowStyle = (isOpen) => ({
+    display: 'inline-block',
+    transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+    transition: 'transform 0.3s ease',
+  });
+
+  const listStyle = {
+    listStyleType: 'disc',
+    paddingLeft: '1.5rem',
+    fontSize: '16px',
+    lineHeight: '1.8',
+    transition: 'all 0.3s ease',
+  };
+
+  const sectionBox = {
+    marginBottom: '25px',
+    paddingBottom: '10px',
+    borderBottom: '1px solid #e0e0e0',
+  };
+
+  return (
+    <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '30px 20px' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: '600', textAlign: 'center', marginBottom: '10px' }}>
+        Product Listing Policy
+      </h1>
+      <h2 style={{ fontSize: '18px', textAlign: 'center', color: '#666', marginBottom: '25px' }}>
+        Effective February 15, 2020
+      </h2>
+
+      <div style={{ fontSize: '16px', marginBottom: '30px', lineHeight: '1.7' }}>
+        <p>
+          This Product Listing Policy applies to the Ulinkit.com website and any mobile applications operated by
+          Blink Technologies FZCO and its affiliates <strong>(“Ulinkit”)</strong>.
         </p>
-        <p className="text-base mb-4">
-          You may not post or sell any item that is restricted or prohibited by a federal, state or local law in any jurisdiction. Below, we have listed categories of prohibited or restricted items, but there may be some that are not covered here. You, as the Seller, are responsible for ensuring that you are not posting an item that is prohibited by law in any jurisdiction.
+        <p>
+          You may not post or sell any item that is restricted or prohibited by a federal, state or local law in any
+          jurisdiction. Below, we have listed categories of prohibited or restricted items, but there may be some that
+          are not covered here. You, as the Seller, are responsible for ensuring that you are not posting an item that
+          is prohibited by law in any jurisdiction.
         </p>
-        <p className="text-base mb-4">
-          Tradeling may impose additional restrictions and prohibitions that may not be required by law. Tradeling may update this policy at any time, it is your responsibility to review the policy on a regular basis to ensure compliance.
+        <p>
+         Ulinkit may impose additional restrictions and prohibitions that may not be required by law.Ulinkit may
+          update this policy at any time, it is your responsibility to review the policy on a regular basis to ensure
+          compliance.
         </p>
-        <p className="text-base mb-4">
-          Tradeling, in its sole discretion, reserves the right to determine whether an item is in violation of this policy and to demand that you remove an item immediately or terminate your account for violation of this policy, per the User Terms And Conditions.
+        <p>
+          Ulinkit, in its sole discretion, reserves the right to determine whether an item is in violation of this
+          policy and to demand that you remove an item immediately or terminate your account for violation of this
+          policy, per the User Terms And Conditions.
         </p>
       </div>
 
-      <div className="mb-6">
-        <h2
-          onClick={() => toggleSection('uaeProhibitedItems')}
-          className="text-2xl font-semibold cursor-pointer text-[#3087d1] mb-2 flex justify-between items-center"
-        >
+      <div style={sectionBox}>
+        <h2 onClick={() => toggleSection('uaeProhibitedItems')} style={sectionStyle}>
           UAE-SPECIFIC PROHIBITED ITEMS
-          <span>{openSections.uaeProhibitedItems ? '▲' : '▼'}</span>
+          <span style={arrowStyle(openSections.uaeProhibitedItems)}>▼</span>
         </h2>
         {openSections.uaeProhibitedItems && (
-          <ul className="list-disc pl-6 text-base space-y-2">
+          <ul style={listStyle}>
             <li>All kinds of narcotic or recreational drugs</li>
             <li>Gambling tools, machineries and devices of all kinds</li>
             <li>Pirated content</li>
@@ -86,21 +127,21 @@ const ProductListingPolicy = () => {
             <li>Items used in black magic, witchcraft or sorcery</li>
             <li>Poppy seeds, or any items containing poppy seeds</li>
             <li>Nylon fishing nets</li>
-            <li>Any other goods or items, prohibited under the GCC Common Customs Law or any other law or regulation applicable in the UAE</li>
+            <li>
+              Any other goods or items, prohibited under the GCC Common Customs Law or any other law or regulation
+              applicable in the UAE
+            </li>
           </ul>
         )}
       </div>
 
-      <div className="mb-6">
-        <h2
-          onClick={() => toggleSection('tradelingProhibitedItems')}
-          className="text-2xl font-semibold cursor-pointer text-[#3087d1] mb-2 flex justify-between items-center"
-        >
-          OTHER THINGS PROHIBITED BY TRADELING
-          <span>{openSections.tradelingProhibitedItems ? '▲' : '▼'}</span>
+      <div style={sectionBox}>
+        <h2 onClick={() => toggleSection('tradelingProhibitedItems')} style={sectionStyle}>
+          OTHER THINGS PROHIBITED BY Ulinkit
+          <span style={arrowStyle(openSections.tradelingProhibitedItems)}>▼</span>
         </h2>
         {openSections.tradelingProhibitedItems && (
-          <ul className="list-disc pl-6 text-base space-y-2">
+          <ul style={listStyle}>
             <li>All kinds of narcotic or recreational drugs</li>
             <li>Gambling tools, machineries and devices of all kinds</li>
             <li>Pirated content</li>
@@ -110,21 +151,21 @@ const ProductListingPolicy = () => {
             <li>Items used in black magic, witchcraft or sorcery</li>
             <li>Poppy seeds, or any items containing poppy seeds</li>
             <li>Nylon fishing nets</li>
-            <li>Any other goods or items, prohibited under the GCC Common Customs Law or any other law or regulation applicable in the UAE</li>
+            <li>
+              Any other goods or items, prohibited under the GCC Common Customs Law or any other law or regulation
+              applicable in the UAE
+            </li>
           </ul>
         )}
       </div>
 
-      <div className="mb-6">
-        <h2
-          onClick={() => toggleSection('fullPolicy')}
-          className="text-2xl font-semibold cursor-pointer text-[#3087d1] mb-2 flex justify-between items-center"
-        >
+      <div style={sectionBox}>
+        <h2 onClick={() => toggleSection('fullPolicy')} style={sectionStyle}>
           Prohibited Items List
-          <span>{openSections.fullPolicy ? '▲' : '▼'}</span>
+          <span style={arrowStyle(openSections.fullPolicy)}>▼</span>
         </h2>
         {openSections.fullPolicy && (
-          <ul className="list-disc pl-6 text-base space-y-2">
+          <ul style={listStyle}>
             {prohibitedItems.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
@@ -132,11 +173,12 @@ const ProductListingPolicy = () => {
         )}
       </div>
 
-      <h2 className="text-xl text-center mt-6">
+      <h2 style={{ textAlign: 'center', fontSize: '18px', marginTop: '30px' }}>
         If you have any questions regarding the Product Listing Policy, please{' '}
-        <a href="contact-us" className="text-blue-600 hover:underline">
+        <a href="contact-us" style={{ color: '#3087d1', textDecoration: 'underline' }}>
           Contact Us
-        </a>.
+        </a>
+        .
       </h2>
     </div>
   );

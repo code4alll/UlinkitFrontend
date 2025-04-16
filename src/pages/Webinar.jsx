@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 const WebinarAndEBooks = () => {
   const [webinars, setWebinars] = useState([]);
   const [ebooks, setEbooks] = useState([]);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [activeTab, setActiveTab] = useState('webinars');
 
   // Fetch webinars and e-books data (mock data in this case)
   useEffect(() => {
@@ -22,61 +24,241 @@ const WebinarAndEBooks = () => {
     setEbooks(fetchedEbooks);
   }, []);
 
+  const handleCardHover = (id) => {
+    setHoveredCard(id);
+  };
+
+  const handleCardLeave = () => {
+    setHoveredCard(null);
+  };
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div className="p-8 bg-gray-50 rounded-lg">
-      <h2 className="text-3xl text-center mb-8 font-semibold text-gray-800">Webinars & E-Books</h2>
+    <div style={{
+      padding: '2rem',
+      backgroundColor: '#f9fafb',
+      borderRadius: '0.5rem',
+      maxWidth: '1200px',
+      margin: '0 auto'
+    }}>
+      <h2 style={{
+        fontSize: '1.875rem',
+        textAlign: 'center',
+        marginBottom: '2rem',
+        fontWeight: '600',
+        color: '#1f2937'
+      }}>Webinars & E-Books</h2>
 
-      {/* Webinars Section */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-semibold mb-6 text-gray-700">Upcoming Webinars</h3>
-        <p className="text-gray-600 mb-8 text-center">Join us for live webinars where industry experts share their knowledge on cutting-edge topics. Stay ahead of the curve by learning about the latest trends and best practices!</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {webinars.length > 0 ? (
-            webinars.map(webinar => (
-              <div key={webinar.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
-<img src={`${webinar.image}`} alt={webinar.title} className="w-full h-56 object-cover" />
-
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-800">{webinar.title}</h4>
-                  <p className="text-sm text-gray-600 mt-2">{webinar.description}</p>
-                  <p className="mt-4 text-sm text-gray-500">Date: {webinar.date}</p>
-                  <button className=" mt-2 bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-bold py-3 px-6 rounded-md shadow-md transform hover:scale-105 transition-transform duration-300">
-       Register
-      </button>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p>No webinars available at the moment.</p>
-          )}
-        </div>
+      {/* Tab Navigation */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: '2rem',
+        gap: '1rem'
+      }}>
+        <button
+          onClick={() => handleTabChange('webinars')}
+          style={{
+            padding: '0.5rem 1rem',
+            borderRadius: '0.375rem',
+            fontWeight: '600',
+            backgroundColor: activeTab === 'webinars' ? '#f97316' : '#e5e7eb',
+            color: activeTab === 'webinars' ? 'white' : '#4b5563',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease'
+          }}
+        >
+          Webinars
+        </button>
+        <button
+          onClick={() => handleTabChange('ebooks')}
+          style={{
+            padding: '0.5rem 1rem',
+            borderRadius: '0.375rem',
+            fontWeight: '600',
+            backgroundColor: activeTab === 'ebooks' ? '#f97316' : '#e5e7eb',
+            color: activeTab === 'ebooks' ? 'white' : '#4b5563',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease'
+          }}
+        >
+          E-Books
+        </button>
       </div>
 
-      {/* E-Books Section */}
-    {/* E-Books Section */}
-<div>
-  <h3 className="text-2xl font-semibold mb-6 text-gray-700">Available E-Books</h3>
-  <p className="text-gray-600 mb-8 text-center">Download free e-books to enhance your skills in web development, digital marketing, and more. Learn at your own pace and start your journey toward becoming an expert!</p>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {ebooks.length > 0 ? (
-      ebooks.map(ebook => (
-        <div key={ebook.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
-          {/* Corrected to use ebook.image */}
-          <img src={ebook.image} alt={ebook.title} className="w-full h-56 object-cover" />
-          <div className="p-6">
-            {/* Corrected to use ebook.title */}
-            <h4 className="text-xl font-bold text-gray-800">{ebook.title}</h4>
-            <p className="text-sm text-gray-600 mt-2">{ebook.description}</p>
-            <a href={ebook.downloadLink} download className="mt-4 text-blue-500 hover:underline font-semibold">Download PDF</a>
+      {/* Webinars Section */}
+      {activeTab === 'webinars' && (
+        <div style={{ marginBottom: '3rem' }}>
+          <h3 style={{
+            fontSize: '1.5rem',
+            fontWeight: '600',
+            marginBottom: '1.5rem',
+            color: '#374151'
+          }}>Upcoming Webinars</h3>
+          <p style={{
+            color: '#4b5563',
+            marginBottom: '2rem',
+            textAlign: 'center'
+          }}>Join us for live webinars where industry experts share their knowledge on cutting-edge topics. Stay ahead of the curve by learning about the latest trends and best practices!</p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gap: '2rem'
+          }}>
+            {webinars.length > 0 ? (
+              webinars.map(webinar => (
+                <div
+                  key={webinar.id}
+                  onMouseEnter={() => handleCardHover(webinar.id)}
+                  onMouseLeave={handleCardLeave}
+                  style={{
+                    backgroundColor: 'white',
+                    borderRadius: '0.5rem',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                    overflow: 'hidden',
+                    transition: 'all 0.3s ease',
+                    transform: hoveredCard === webinar.id ? 'scale(1.05)' : 'scale(1)',
+                    boxShadow: hoveredCard === webinar.id ? '0 10px 15px rgba(0, 0, 0, 0.1)' : '0 4px 6px rgba(0, 0, 0, 0.1)'
+                  }}
+                >
+                  <img
+                    src={webinar.image}
+                    alt={webinar.title}
+                    style={{
+                      width: '100%',
+                      height: '14rem',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  <div style={{ padding: '1.5rem' }}>
+                    <h4 style={{
+                      fontSize: '1.25rem',
+                      fontWeight: 'bold',
+                      color: '#1f2937'
+                    }}>{webinar.title}</h4>
+                    <p style={{
+                      fontSize: '0.875rem',
+                      color: '#4b5563',
+                      marginTop: '0.5rem'
+                    }}>{webinar.description}</p>
+                    <p style={{
+                      marginTop: '1rem',
+                      fontSize: '0.875rem',
+                      color: '#6b7280'
+                    }}>Date: {webinar.date}</p>
+                    <button
+                      style={{
+                        marginTop: '0.5rem',
+                        background: 'linear-gradient(to right, #f97316, #ea580c)',
+                        color: 'white',
+                        fontWeight: 'bold',
+                        padding: '0.75rem 1.5rem',
+                        borderRadius: '0.375rem',
+                        border: 'none',
+                        cursor: 'pointer',
+                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                        transition: 'transform 0.3s ease',
+                        transform: hoveredCard === webinar.id ? 'scale(1.05)' : 'scale(1)'
+                      }}
+                    >
+                      Register
+                    </button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No webinars available at the moment.</p>
+            )}
           </div>
         </div>
-      ))
-    ) : (
-      <p>No e-books available at the moment.</p>
-    )}
-  </div>
-</div>
+      )}
 
+      {/* E-Books Section */}
+      {activeTab === 'ebooks' && (
+        <div>
+          <h3 style={{
+            fontSize: '1.5rem',
+            fontWeight: '600',
+            marginBottom: '1.5rem',
+            color: '#374151'
+          }}>Available E-Books</h3>
+          <p style={{
+            color: '#4b5563',
+            marginBottom: '2rem',
+            textAlign: 'center'
+          }}>Download free e-books to enhance your skills in web development, digital marketing, and more. Learn at your own pace and start your journey toward becoming an expert!</p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gap: '2rem'
+          }}>
+            {ebooks.length > 0 ? (
+              ebooks.map(ebook => (
+                <div
+                  key={ebook.id}
+                  onMouseEnter={() => handleCardHover(ebook.id)}
+                  onMouseLeave={handleCardLeave}
+                  style={{
+                    backgroundColor: 'white',
+                    borderRadius: '0.5rem',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                    overflow: 'hidden',
+                    transition: 'all 0.3s ease',
+                    transform: hoveredCard === ebook.id ? 'scale(1.05)' : 'scale(1)',
+                    boxShadow: hoveredCard === ebook.id ? '0 10px 15px rgba(0, 0, 0, 0.1)' : '0 4px 6px rgba(0, 0, 0, 0.1)'
+                  }}
+                >
+                  <img
+                    src={ebook.image}
+                    alt={ebook.title}
+                    style={{
+                      width: '100%',
+                      height: '14rem',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  <div style={{ padding: '1.5rem' }}>
+                    <h4 style={{
+                      fontSize: '1.25rem',
+                      fontWeight: 'bold',
+                      color: '#1f2937'
+                    }}>{ebook.title}</h4>
+                    <p style={{
+                      fontSize: '0.875rem',
+                      color: '#4b5563',
+                      marginTop: '0.5rem'
+                    }}>{ebook.description}</p>
+                    <a
+                      href={ebook.downloadLink}
+                      download
+                      style={{
+                        display: 'inline-block',
+                        marginTop: '1rem',
+                        color: '#3b82f6',
+                        fontWeight: '600',
+                        textDecoration: 'none',
+                        transition: 'all 0.2s ease',
+                        ':hover': {
+                          textDecoration: 'underline'
+                        }
+                      }}
+                    >
+                      Download PDF
+                    </a>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No e-books available at the moment.</p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
