@@ -27,14 +27,135 @@ const testimonials = [
   },
 ];
 
+const styles = {
+  container: {
+    backgroundColor: '#f9fafb',
+    padding: '4rem 1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    fontFamily: 'sans-serif',
+  },
+  heading: {
+    fontSize: '2.5rem',
+    fontWeight: 700,
+    color: '#111827',
+    marginBottom: '2.5rem',
+    textAlign: 'center',
+  },
+  carouselWrapper: {
+    position: 'relative',
+    width: '100%',
+    maxWidth: '720px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  arrow: {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    backgroundColor: '#fff',
+    fontSize: '2.5rem',
+    color: '#4b5563',
+    cursor: 'pointer',
+    zIndex: 10,
+    border: 'none',
+    borderRadius: '50%',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+    width: '48px',
+    height: '48px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transition: 'all 0.2s ease-in-out',
+  },
+  leftArrow: {
+    left: '-60px',
+  },
+  rightArrow: {
+    right: '-60px',
+  },
+  cardContainer: {
+    overflow: 'hidden',
+    width: '100%',
+  },
+  cards: {
+    display: 'flex',
+    transition: 'transform 0.6s ease-in-out',
+  },
+  singleCardWrapper: {
+    flexShrink: 0,
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  testimonialCard: {
+    backgroundColor: 'white',
+    borderRadius: '1rem',
+    boxShadow: '0 12px 24px rgba(0, 0, 0, 0.06)',
+    padding: '2.5rem',
+    width: '100%',
+    maxWidth: '640px',
+    textAlign: 'center',
+    transition: 'transform 0.4s ease',
+  },
+  initialsCircle: {
+    backgroundColor: '#1d4ed8',
+    color: 'white',
+    width: '60px',
+    height: '60px',
+    borderRadius: '9999px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    margin: '0 auto 1.5rem',
+  },
+  quote: {
+    color: '#374151',
+    marginBottom: '1.25rem',
+    fontStyle: 'italic',
+    fontSize: '1.1rem',
+    lineHeight: '1.75',
+  },
+  name: {
+    color: '#111827',
+    fontWeight: 700,
+    fontSize: '1.1rem',
+    marginBottom: '0.25rem',
+  },
+  designation: {
+    color: '#6b7280',
+    fontSize: '0.95rem',
+  },
+  dotsContainer: {
+    display: 'flex',
+    gap: '0.5rem',
+    marginTop: '2rem',
+  },
+  dot: {
+    width: '14px',
+    height: '14px',
+    borderRadius: '9999px',
+    border: 'none',
+    cursor: 'pointer',
+    backgroundColor: '#d1d5db',
+    transition: 'all 0.3s ease',
+  },
+  activeDot: {
+    backgroundColor: '#1d4ed8',
+    transform: 'scale(1.2)',
+  },
+};
+
 const TestimonialCard = ({ testimonial }) => (
-  <div className="bg-white rounded-xl shadow-md p-8 text-center w-full max-w-xl mx-auto transition-all duration-500 ease-in-out">
-    <div className="bg-blue-700 text-white w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold mb-5 mx-auto">
-      {testimonial.initials}
-    </div>
-    <p className="text-gray-700 leading-relaxed mb-4 italic">"{testimonial.quote}"</p>
-    <div className="text-gray-900 font-semibold">{testimonial.name}</div>
-    <div className="text-gray-600 text-sm">
+  <div style={styles.testimonialCard}>
+    <div style={styles.initialsCircle}>{testimonial.initials}</div>
+    <p style={styles.quote}>"{testimonial.quote}"</p>
+    <div style={styles.name}>{testimonial.name}</div>
+    <div style={styles.designation}>
       {testimonial.designation}, {testimonial.company}
     </div>
   </div>
@@ -56,57 +177,54 @@ const TestimonialCarousel = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(goToNext, 6000);
+    const interval = setInterval(goToNext, 7000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="bg-gray-100 py-12 px-4 flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
-        What our employees say?
-      </h2>
+    <div style={styles.container}>
+      <h2 style={styles.heading}>What our employees say?</h2>
 
-      <div className="relative w-full max-w-2xl flex items-center justify-center">
-        {/* Left Arrow */}
+      <div style={styles.carouselWrapper}>
         <button
           onClick={goToPrevious}
-          className=" !bg-white absolute left-[-40px] md:left-[-60px] text-3xl text-gray-600 hover:text-blue-700 z-10"
+          style={{ ...styles.arrow, ...styles.leftArrow }}
         >
           &#8592;
         </button>
 
-        {/* Carousel Wrapper */}
-        <div className="overflow-hidden w-full">
+        <div style={styles.cardContainer}>
           <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            style={{
+              ...styles.cards,
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
           >
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="w-full flex-shrink-0">
+              <div key={index} style={styles.singleCardWrapper}>
                 <TestimonialCard testimonial={testimonial} />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right Arrow */}
         <button
           onClick={goToNext}
-          className="absolute  !bg-white right-[-40px] md:right-[-60px] text-3xl text-gray-600 hover:text-blue-700 z-10"
+          style={{ ...styles.arrow, ...styles.rightArrow }}
         >
           &#8594;
         </button>
       </div>
 
-      {/* Dots */}
-      <div className="flex gap-2 mt-6">
+      <div style={styles.dotsContainer}>
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all !bg-white ${
-              currentIndex === index ? 'bg-blue-700 scale-110' : 'bg-gray-400'
-            }`}
+            style={{
+              ...styles.dot,
+              ...(currentIndex === index ? styles.activeDot : {}),
+            }}
           ></button>
         ))}
       </div>
