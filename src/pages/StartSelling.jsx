@@ -956,7 +956,7 @@ const BecomeSeller = () => {
             fontSize: "2rem",
             marginBottom: "1.5rem",
             fontWeight: 600
-          }}>Ready to grow your business in MENA?</h2>
+          }}>Ready to grow your business in Dubai?</h2>
           <p style={{
             color: "rgba(255, 255, 255, 0.9)",
             fontSize: "1.1rem",
@@ -965,27 +965,35 @@ const BecomeSeller = () => {
           }}>
             Join hundreds of international sellers already expanding their reach with Ulinkit.
           </p>
-          <button 
-            onMouseEnter={() => setHoveredButton(true)}
-            onMouseLeave={() => setHoveredButton(false)}
-            style={{
-              backgroundColor: hoveredButton ? "#e64a19" : "#ff5722",
-              color: "white",
-              padding: "16px 120px",
-              border: "none",
-              fontWeight: 600,
-              fontSize: "1.1rem",
-              cursor: "pointer",
-              borderRadius: "4px",
-              transition: "all 0.3s ease",
-              boxShadow: hoveredButton ? "0 8px 16px rgba(255, 87, 34, 0.3)" : "0 4px 8px rgba(255, 87, 34, 0.2)",
-              transform: hoveredButton ? "translateY(-2px)" : "none",
-              whiteSpace:'nowrap',
-              display:'inline-block',
-              overflow:'hidden'
-            }}>
-            BECOME A SELLER TODAY
-          </button>
+          <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+  <button 
+    onMouseEnter={() => setHoveredButton(true)}
+    onMouseLeave={() => setHoveredButton(false)}
+    style={{
+      backgroundColor: hoveredButton ? "#e64a19" : "#ff5722",
+      color: "white",
+      padding: "16px 40px", // much safer
+      border: "none",
+      fontWeight: 600,
+      fontSize: "1.1rem",
+      cursor: "pointer",
+      borderRadius: "4px",
+      transition: "all 0.3s ease",
+      boxShadow: hoveredButton
+        ? "0 8px 16px rgba(255, 87, 34, 0.3)"
+        : "0 4px 8px rgba(255, 87, 34, 0.2)",
+      transform: hoveredButton ? "translateY(-2px)" : "none",
+      whiteSpace: "nowrap", // no wrapping
+      maxWidth: "100%",     // prevents overflow
+      overflow: "hidden",   // clips anything extra
+      textOverflow: "ellipsis", // adds "..." if needed
+    }}>
+ Read More
+  </button>
+</div>
+
+
+
         </div>
       </section>
     </div>
