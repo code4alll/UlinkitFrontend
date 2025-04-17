@@ -437,7 +437,7 @@ function Logistics() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Ecommerce Fulfillment Made Easy by Tradeling Logistics Services
+          Ecommerce Fulfillment Made Easy by Ulinkit Logistics Services
         </motion.h1>
         <motion.p 
           style={styles.heroSub}
@@ -489,16 +489,7 @@ function Logistics() {
           ))}
         </motion.div>
 
-        <motion.div 
-          style={styles.videoBlock}
-          variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-        >
-          <video style={styles.videoStyle} controls poster="https://via.placeholder.com/600x400">
-            <source src="/Images/warehouse.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </motion.div>
+       
       </motion.div>
 
       {/* Benefits Section */}

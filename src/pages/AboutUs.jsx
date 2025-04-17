@@ -92,7 +92,7 @@ const About = () => {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        backgroundImage: `url(${warehouseImg})`,
+        backgroundImage: `url("/Images/Company.avif")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
@@ -507,7 +507,7 @@ const About = () => {
         justifyContent: "center",
         padding: "4rem 1.5rem",
         color: "white",
-        backgroundImage: `url(${warehouseImg})`,
+        backgroundImage: `url("/Images/Vision3.avif")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
@@ -588,7 +588,7 @@ const About = () => {
           whileHover={{ scale: 1.02 }}
         >
           <img
-            src={warehouseImg}
+            src="/Images/Company1.avif"
             alt="Warehouse"
             style={{
               width: "100%",

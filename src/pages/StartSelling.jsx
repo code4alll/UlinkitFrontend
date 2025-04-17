@@ -12,7 +12,7 @@ const BecomeSeller = () => {
 
   const faqs = [
     {
-      question: "How do I register as a Seller on Tradeling?",
+      question: "How do I register as a Seller on Ulinkit?",
       answer: "You can register by clicking the 'Become a Seller' button and filling out our simple registration form. Our team will review your application and get back to you within 2 business days."
     },
     {
@@ -87,7 +87,7 @@ const BecomeSeller = () => {
               lineHeight: 1.6,
               opacity: 0.9
             }}>
-              Easily sell to the Middle East and North Africa (MENA) without opening a local office. Tens of thousands
+              Easily sell to the UAE without opening a local office. Tens of thousands
               of verified wholesale buyers are only a few clicks away.
             </p>
             <button 
@@ -137,7 +137,7 @@ const BecomeSeller = () => {
           }}>
             <img
               src="/Images/Selling.webp"
-              alt="Tradeling platform with shipping boxes"
+              alt="Ulinkit platform with shipping boxes"
               style={{
                 width: "100%",
                 maxWidth: 600,
@@ -611,7 +611,7 @@ const BecomeSeller = () => {
                 gridTemplateRows: "repeat(3, 1fr)",
                 zIndex: 1
               }}>
-                {["China", "UK", "India", "Turkey", "Taiwan", "UAE", "Spain"].map((country, index) => (
+                {["China", "UK", "India", "Turkey", "Taiwan", "USA", "Spain"].map((country, index) => (
                   <div 
                     key={index}
                     style={{
@@ -634,7 +634,7 @@ const BecomeSeller = () => {
                       alignItems: "center"
                     }}>
                       <img 
-                        src={`/Images/flags/${country.toLowerCase()}.png`} 
+                        src={`/Images/flags/${country.toLowerCase()}.webp`} 
                         alt={`${country} flag`} 
                         style={{
                           height: "20px",
@@ -649,7 +649,7 @@ const BecomeSeller = () => {
                 ))}
               </div>
               <img 
-                src="/Images/global-logistics.webp" 
+                src="/Images/global_Logistics.webp" 
                 alt="Global logistics" 
                 style={{
                   width: "100%",
@@ -712,7 +712,7 @@ const BecomeSeller = () => {
                 }}
               >
                 <img 
-                  src={`/Images/partners/${partner.replace(/\s+/g, '-').toLowerCase()}.png`} 
+                  src={`/Images/Partners/${partner.replace(/\s+/g, '-').toLowerCase()}.png`} 
                   alt={partner} 
                   style={{
                     height: "60px",
@@ -760,14 +760,14 @@ const BecomeSeller = () => {
           }}>
             {[
               {
-                logo: "/Images/logos/kensmatic.png",
-                quote: "Tradeling is helping us bring healthy foods to the MENA region. We are reaching more customers and making more sales, at no additional cost.",
-                author: "Henry Haddad, General Manager, Kensmatic Foods"
+                logo: "/Images/Blog2.webp",
+                quote: "Ulinkit is helping us bring healthy foods to the UAE region. We are reaching more customers and making more sales, at no additional cost.",
+                author: "Henry Haddad, Kensmatic Foods"
               },
               {
-                logo: "/Images/logos/brf.png",
-                quote: "Having our products listed on Tradeling definitely makes sense. All of our products are available online for potential customers to see and get in touch with us directly.",
-                author: "Sao Marcos Sales Manager, BRF - Sadia Foods"
+                logo: "/Images/Blog1.webp",
+                quote: "Having our products listed on Ulinkit definitely makes sense. All of our products are available online for potential customers to see and get in touch with us directly.",
+                author: "Sao Marcos , BRF - Sadia Foods"
               }
             ].map((testimonial, index) => (
               <div 
@@ -963,7 +963,7 @@ const BecomeSeller = () => {
             marginBottom: "2rem",
             lineHeight: 1.6
           }}>
-            Join hundreds of international sellers already expanding their reach with Tradeling.
+            Join hundreds of international sellers already expanding their reach with Ulinkit.
           </p>
           <button 
             onMouseEnter={() => setHoveredButton(true)}
@@ -971,7 +971,7 @@ const BecomeSeller = () => {
             style={{
               backgroundColor: hoveredButton ? "#e64a19" : "#ff5722",
               color: "white",
-              padding: "16px 40px",
+              padding: "16px 120px",
               border: "none",
               fontWeight: 600,
               fontSize: "1.1rem",
@@ -979,7 +979,10 @@ const BecomeSeller = () => {
               borderRadius: "4px",
               transition: "all 0.3s ease",
               boxShadow: hoveredButton ? "0 8px 16px rgba(255, 87, 34, 0.3)" : "0 4px 8px rgba(255, 87, 34, 0.2)",
-              transform: hoveredButton ? "translateY(-2px)" : "none"
+              transform: hoveredButton ? "translateY(-2px)" : "none",
+              whiteSpace:'nowrap',
+              display:'inline-block',
+              overflow:'hidden'
             }}>
             BECOME A SELLER TODAY
           </button>
